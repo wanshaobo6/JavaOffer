@@ -1,6 +1,6 @@
 package com.example.duplicationinarray;
 
-import com.example.SortUtils;
+import com.example.utils.SortUtils;
 
 /**
  * 在一个长度为n的数组里的所有数字都在0~n-1的范围内。数组中某些数字的重复的，但不知道有几个数字重复了，
