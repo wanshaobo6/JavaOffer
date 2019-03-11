@@ -1,4 +1,4 @@
-package com.example.duplicationinarray;
+package com.example.p39_duplicationinarray;
 
 import com.example.utils.SortUtils;
 
