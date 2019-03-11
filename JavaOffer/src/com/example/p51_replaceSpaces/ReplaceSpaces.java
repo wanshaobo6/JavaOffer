@@ -1,5 +1,6 @@
 package com.example.p51_replaceSpaces;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -29,7 +30,7 @@ public class ReplaceSpaces {
 		//非空判断
 		if(str == null || str.length() == 0){
 			return str;
-		}
+ 		}
 		//遍历字符串获得新字符串长度
 		int length = str.length();
 		int newLength = str.length();
