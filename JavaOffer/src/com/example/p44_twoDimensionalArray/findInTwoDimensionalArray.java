@@ -1,4 +1,4 @@
-package com.example.twoDimensionalArray;
+package com.example.p44_twoDimensionalArray;
 
 /**
  *  在一个二维数组中，每一行按照从左到右递增的顺序排列，每一列按照从上到下递增的顺序排列，输入一个二维数组和整数，判断数组中是否含有该整数
