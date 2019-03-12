@@ -63,6 +63,8 @@ public class MyStack<E> {
 	 * @param item
 	 */
 	public void push(E item){
+		if(item == null)
+			return;
 		ensureCapacity(top);
 		elementData[top] = item;
 		top++;
