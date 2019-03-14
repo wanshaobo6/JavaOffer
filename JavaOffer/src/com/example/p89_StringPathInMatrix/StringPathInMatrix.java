@@ -1,4 +1,7 @@
 package com.example.p89_StringPathInMatrix;
+
+import javax.sound.midi.Soundbank;
+
 /**
  * 题目：矩阵中的路径
  * 设计一个函数，用来判断一个矩阵中是否存在一条包含某字符串的路径。
@@ -21,8 +24,10 @@ public class StringPathInMatrix {
 		char[][] data = {
 				{'a', 'b', 't', 'g'},
 				{'c', 'f', 'c', 's'},
-				{'j', 'd', 'e', 'h'}};
-		System.out.println(hasPath(data, "bfce"));
+				{'j', 'd', 'e', 'h'},
+				{'g', 's', 'w', 'x'},
+				{'q', 'w', 'q', 'l'}};
+		System.out.println(hasPath(data, "acjgqwsdfcewqlxhsg"));
 		System.out.println(hasPath(data, "abfb"));
 	}
 
@@ -35,11 +40,26 @@ public class StringPathInMatrix {
 		//遍历数组寻找入口
 		for(int row =0 ; row<rows ; row++){
 			for(int column =0; column<columns ;column++){
-				if(hashPathCore(data,row,column,visitFlag,str,0))
+				if(hashPathCore(data,row,column,visitFlag,str,0)){
+					showBooleanMatrix(visitFlag);
 					return true;
+					}
 			}
 		}
 		return false;
+	}
+
+	public static void showBooleanMatrix(boolean[][] visitFlag) {
+		// TODO Auto-generated method stub
+		if(visitFlag == null)
+			return ;
+		for(int i=0;i<visitFlag.length ;i++){
+			for(int j=0;j<visitFlag[0].length ;j++){
+				System.out.print((visitFlag[i][j] ? 1 : 0) +"-");
+			}
+			System.out.println();
+		}
+		
 	}
 
 	private static boolean hashPathCore(char[][] data, int row, int col, boolean[][] visitFlag, String str, int strIndex) {
