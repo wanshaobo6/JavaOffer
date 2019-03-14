@@ -12,10 +12,10 @@ public class Fibonacci {
 	
 	public static void main(String[] args) {
 		System.out.println(System.currentTimeMillis());
-		System.out.println(fibonacci2(13));
+		System.out.println(fibonacci1(50));
 		System.out.println(System.currentTimeMillis());
 		System.out.println(System.currentTimeMillis());
-		System.out.println(fibonacci3(13));
+		System.out.println(fibonacci2(50));
 		System.out.println(System.currentTimeMillis());
 	}
 	
