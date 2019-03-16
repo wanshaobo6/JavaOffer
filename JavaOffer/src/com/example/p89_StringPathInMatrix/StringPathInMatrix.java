@@ -27,7 +27,7 @@ public class StringPathInMatrix {
 				{'j', 'd', 'e', 'h'},
 				{'g', 's', 'w', 'x'},
 				{'q', 'w', 'q', 'l'}};
-		System.out.println(hasPath(data, "acjgqwsdfcewqlxhsg"));
+		System.out.println(hasPath(data, "abfdswq"));
 		System.out.println(hasPath(data, "abfb"));
 	}
 
