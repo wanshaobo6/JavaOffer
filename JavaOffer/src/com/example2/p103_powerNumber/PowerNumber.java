@@ -2,6 +2,10 @@ package com.example2.p103_powerNumber;
 
 public class PowerNumber {
 	public static void main(String[] args) {
+		double a = 0.7;
+		double b = 0.77;
+		System.out.println(a == b-0.07);
+		System.out.println(a == b);
 		System.out.println(powNumber(0));
 		System.out.println(powNumber(4));
 		System.out.println(powNumber(5));
