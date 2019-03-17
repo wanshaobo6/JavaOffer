@@ -1,4 +1,4 @@
-package com.example2.p20operationForListNode;
+package com.example2.p20_operationForListNode;
 
 import com.example.p63_constructBinaryTree.BinaryTreeNode;
 

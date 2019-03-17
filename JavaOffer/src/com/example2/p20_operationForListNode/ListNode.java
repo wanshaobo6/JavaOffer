@@ -1,4 +1,4 @@
-package com.example2.p20operationForListNode;
+package com.example2.p20_operationForListNode;
 
 public class ListNode<E> {
 	 E m_nValue;
