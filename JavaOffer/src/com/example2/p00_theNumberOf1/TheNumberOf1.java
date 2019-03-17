@@ -1,4 +1,4 @@
-package com.example2.p100_theNumberOf1;
+package com.example2.p00_theNumberOf1;
 
   /**
 	*实现一个函数，输入一个int型整数，输出该数字在计算机中二进制表示形式的1的个数。

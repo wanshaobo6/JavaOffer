@@ -1,4 +1,4 @@
-package com.example2.p103_powerNumber;
+package com.example2.p03_powerNumber;
 
 public class PowerNumber {
 	public static void main(String[] args) {

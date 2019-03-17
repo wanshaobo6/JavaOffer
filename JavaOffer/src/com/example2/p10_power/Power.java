@@ -1,4 +1,4 @@
-package com.example2.p110_power;
+package com.example2.p10_power;
 
 /**
  /**
