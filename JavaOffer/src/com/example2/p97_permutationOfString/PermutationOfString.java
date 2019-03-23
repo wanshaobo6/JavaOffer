@@ -21,6 +21,8 @@ public class PermutationOfString {
 	}
 	
 	static void PermutationOfString(String str){
+		if(str == null || str.length() == 0)
+			return ;
 		PermutationOfString(str.toCharArray() ,0);
 	}
 	
