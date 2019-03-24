@@ -1,4 +1,4 @@
-package com.example2;
+package com.example2.stringplus;
 
 import java.util.Arrays;
 
