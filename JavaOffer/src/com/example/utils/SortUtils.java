@@ -1,6 +1,11 @@
 package com.example.utils;
 
 public class SortUtils {
+	
+	public static void main(String[] args) {
+		int[] nums = {2,1,3,4,5};
+		QuickSort(nums , 0 , nums.length-1);
+	}
 	/**
 	 * ц╟ещеепР
 	 * @param array
