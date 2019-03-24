@@ -16,6 +16,8 @@ public class example_eightQueue {
 		
 		private static int caculate(int[] columnsIndex) {
 			// TODO Auto-generated method stub
+			if(columnsIndex==null || columnsIndex.length!=8)
+				return -1;
 			Timer timer = new Timer();
 			 check(columnsIndex,0 ,timer);
 			 return timer.time;
