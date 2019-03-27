@@ -1,6 +1,10 @@
 package com.example3.p09_theSmallestKDigital;
 
+import java.net.MulticastSocket;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * 面试题40: 最小的k个数
@@ -11,9 +15,14 @@ import java.util.Arrays;
  */
 public class TheSmallestKDigital {
 	public static void main(String[] args) {
-		int[] numArr = {7,5,4,6,8,1,2,4,8,7,5,8,6,1,2,3};
-		int[] arr = getTheSmallestKDigital1(numArr,7);
+		int[] numArr = {4,5,1,6,2,7,3,8};
+		int[] arr = getTheSmallestKDigital1(numArr,4);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(numArr[i]);
+		}
 		System.out.println();
+		TreeSet dig = getTheSmallestKDigital2(numArr,4);
+		System.out.println(dig);
 	}
 	
 	/**
@@ -66,5 +75,34 @@ public class TheSmallestKDigital {
 		if(stdPoint+1 == start && numArr.length!=2)
 			return stdPoint;
 		return start;
+	}
+	
+	/**
+	 * 	解法2：时间复杂度o(nlogk)的算法,特别适合处理海量数据 , 用TreeSet方法不允许数据重复
+	 * 
+	 * TreeSet原理：TreeSet在存储对象的时候，可以排序，但是需要制定排序的算法。
+	 * 			其中的Integer和String都能实现默认的排序顺序。在使用TreeSet存储
+	 * 			对象的时候，add（）方法内部就会自动调用compareTo（）方法进行比较
+	 * 			，根据比较结果使用二叉树的形式进行存储。
+	 *	TreeSet是一个有序集合，TreeSet中的元素将按照升序排列，缺省是按照自然排序进
+	 *			行排列，意味着TreeSet中的元素要实现Comparable接口。或者有一个自定义的比较器。
+	 *我们可以在构造TreeSet对象时，传递实现Comparator接口的比较器对象。                                                                                                          
+	 */
+	static TreeSet getTheSmallestKDigital2(int[] numArr, int k){
+		if(numArr == null || numArr.length == 0 || k<=0 || k > numArr.length)
+			return null;
+		TreeSet<Integer> leastNumbers  = new TreeSet();
+		for (int num :numArr) {
+			if(leastNumbers.size() < k){
+				leastNumbers.add(num);
+			}else{
+				int curMax = leastNumbers.last();
+				if(curMax > num){
+					leastNumbers.pollLast();
+					leastNumbers.add(num);
+				}
+			}
+		}
+		return leastNumbers;
 	}
 }
