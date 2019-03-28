@@ -1,5 +1,7 @@
 package com.example.utils;
 
+import java.util.Comparator;
+
 public class SortUtils {
 	
 	public static void main(String[] args) {
@@ -65,10 +67,52 @@ public class SortUtils {
 	}
 	
 	/**
+	 * 快速排序通用方法
+	 * @param array
+	 * @param i
+	 * @param j
+	 */
+	public static <T extends Comparable>  void QuickSortGeneric(T[] array, int left, int right , Comparator<? super T> c) {
+		//判断输入条件
+		if(array == null || array.length<2 || left>=right  || c== null){
+			return;
+		}
+		T temp = array[left];
+		int i = left+1;
+		int j = right;
+		while(i != j){
+			//右哨兵移动
+			while(c.compare(array[j], temp)>=0 && i<j){
+				j--;
+			}
+			//左哨兵移动
+			while(c.compare(array[i] , temp)<0  && i<j){
+				i++;
+			}
+			if(i<j){
+				//交换数据
+				T swap = array[i];
+				array[i] = array[j];
+				array[j] = swap;
+			}
+		}
+		
+		//交换基准数 
+			if(c.compare(temp,array[i])>0){
+			array[left] = array[i];
+			array[i] = temp;
+			}
+		//递归处理左边数据
+			QuickSortGeneric(array,left,i-1 , c);
+		//递归处理右边边数据
+			QuickSortGeneric(array,i+1,right , c);
+	}
+	
+	/**
 	 * 遍历显示数组
 	 * @param array
 	 */
-	public static void showArray(int[] array) {
+	 public static <T> void showArray(T[] array) {
 		// TODO Auto-generated method stub
 		if(array==null){return;}
 		for(int i=0;i<array.length;i++){
@@ -76,5 +120,7 @@ public class SortUtils {
 		}
 		System.out.println();
 	}
+	
+	
 
 }
