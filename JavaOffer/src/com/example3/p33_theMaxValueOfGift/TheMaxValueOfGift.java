@@ -21,11 +21,12 @@ public class TheMaxValueOfGift {
 							{12,2,9,6},
 							{5,7,4,11},
 							{3,7,16,5}};
-		System.out.println(getTheMaxValueOfGift(allGifts));
+		System.out.println(getTheMaxValueOfGift1(allGifts));
+		System.out.println(getTheMaxValueOfGift2(allGifts));
 	}
 	
 	/**
-	 *  解法: 列出递推方程式
+	 *  解法1: 列出递推方程式   时间复杂度o(m*n)
 	 *  				max{ (f(i,j-1)+p(i,j)) , (f(i-1,j)+p(i,j))}    i>0且j>(0)
 	 *  	f(i,j) = 	f(i,j-1)+p(i,j)                         i = 0
 	 *  				f(i-1,j)+p(i,j)                         j=0
@@ -33,7 +34,7 @@ public class TheMaxValueOfGift {
 	 * @param allGifts
 	 * @return
 	 */
-	static int getTheMaxValueOfGift(int[][] allGifts){
+	static int getTheMaxValueOfGift1(int[][] allGifts){
 		if(allGifts == null || allGifts.length == 0 || allGifts[0].length == 0)
 			return 0;
 		int rows = allGifts.length;
@@ -58,5 +59,32 @@ public class TheMaxValueOfGift {
 	private static int getMax(int i, int j) {
 		// TODO Auto-generated method stub
 		return i>j?i:j;
+	}
+	/**
+	 * 解法2:进一步优化
+	 * 		所有礼物的最大价值实际上并没有必要保存下来
+	 * @param allGifts
+	 * @return
+	 */
+	static int getTheMaxValueOfGift2(int[][] allGifts){
+		if(allGifts == null || allGifts.length == 0 || allGifts[0].length == 0)
+			return 0;
+		int rows = allGifts.length;
+		int cols = allGifts[0].length;
+		int[] maxValue = new int[cols];  
+		for (int row = 0; row < rows; row++) {
+			for (int col = 0; col < cols; col++) {
+				int left = 0;
+				int top = 0;
+				if(col > 0)
+					left = maxValue[col-1];
+				
+				if(row > 0)
+					top = maxValue[col];
+				
+				maxValue[col] = getMax(left,top)+allGifts[row][col];
+			}
+		}
+		return maxValue[cols-1];
 	}
 }
