@@ -121,6 +121,18 @@ public class SortUtils {
 		System.out.println();
 	}
 	
-	
+		/**
+		 * 遍历显示数组
+		 * @param array
+		 */
+		 public static<T> void showArray(int[] array) {
+			// TODO Auto-generated method stub
+			if(array==null){return;}
+			for(int i=0;i<array.length;i++){
+				System.out.print(array[i]+" ");
+			}
+			System.out.println();
+		}
+		
 
 }
