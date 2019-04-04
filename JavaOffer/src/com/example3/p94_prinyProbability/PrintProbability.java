@@ -15,7 +15,7 @@ package com.example3.p94_prinyProbability;
 public class PrintProbability {
 	public static void main(String[] args) {
 		System.out.println(System.currentTimeMillis());
-		printProbability(15);
+	//	printProbability(15);
 		System.out.println(System.currentTimeMillis());
 		System.out.println(System.currentTimeMillis());
 		printProbability1(15);
